@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>France Travail - Simulation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Logo_France_Travail.svg" alt="France Travail" class="logo" />
+      <button id="btnConnexion">Connexion</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="loginSection" style="display: none;">
+      <h2>Connexion</h2>
+      <form id="loginForm">
+        <input type="text" placeholder="Identifiant" required />
+        <input type="password" placeholder="Mot de passe" required />
+        <button type="submit">Se connecter</button>
+      </form>
+    </section>
+
+    <section id="home">
+      <h1>Accueil France Travail</h1>
+      <p>Bienvenue sur votre espace France Travail.</p>
+      <button id="btnActualiser" style="display: none;">S'actualiser</button>
+    </section>
+
+    <section id="actualisationSection" style="display: none;">
+      <h2>Formulaire d'actualisation</h2>
+      <form id="actualisationForm">
+        <input type="text" id="mois" disabled />
+        <label for="situation">Situation actuelle :</label>
+        <select id="situation" required>
+          <option value="">-- Sélectionner --</option>
+          <option value="recherche">Toujours en recherche</option>
+          <option value="travail">A travaillé ce mois</option>
+          <option value="formation">En formation</option>
+        </select>
+
+        <div id="travailDetails" style="display: none;">
+          <label>Nombre d'heures travaillées :</label>
+          <input type="number" min="0" />
+          <label>Montant perçu (€) :</label>
+          <input type="number" min="0" />
+        </div>
+
+        <button type="submit">Valider</button>
+      </form>
+      <p id="confirmationMessage" style="display: none;">✅ Actualisation enregistrée.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
